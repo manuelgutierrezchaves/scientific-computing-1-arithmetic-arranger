@@ -4,7 +4,6 @@ def arithmetic_arranger(data, show=False):
     dos = []
     tres = []
     a = b = c = d = ""
-    max_len = 0
 
     for calc in data:
         splitted = calc.split()
@@ -12,25 +11,25 @@ def arithmetic_arranger(data, show=False):
         dos.append(splitted[1])
         tres.append(splitted[2])
 
-    if len(uno) > 5: #Mas de 5 problemas
+    if len(uno) > 5: #More than 5 problems
         return ("Error: Too many problems.")
         quit()
 
     i = 0
     while i<len(uno):
 
-        try: #No contiene solo digitos
+        try: #Not only digits
             int(uno[i])
             int(tres[i])
         except:
             return ("Error: Numbers must only contain digits.")
             quit()
 
-        if dos[i] == "/" or dos[i] == "*": #Division o multiplicacion
+        if dos[i] == "/" or dos[i] == "*": #Division or multiplication
             return ("Error: Operator must be '+' or '-'.")
             quit()
 
-        if len(uno[i]) > 4 or len(tres[i]) > 4: #Mas de 4 digitos
+        if len(uno[i]) > 4 or len(tres[i]) > 4: #More than 4 digits
             return ("Error: Numbers cannot be more than four digits.")
             quit()
 
